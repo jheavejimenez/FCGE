@@ -23,12 +23,21 @@ and returns the count of the numbers between a and b that are divisible by k.
 """
 
 
+def find_divisible(a, b, k):
+    count = 0
+    for i in range(a, b + 1):
+        if i % k == 0:
+            count += 1
+    return count
+
+
 def main():
     # a = [1, 2, 3]
     a = [1, 3, 6, 4, 1, 2]
     # a = [-1, -1, -1, -5]
     # a = [1, 3, 6, 4, 1, 7, 8, 10]
     print(missing_int(a))
+    print(find_divisible(6, 11, 2))
 
 
 if __name__ == "__main__":
