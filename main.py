@@ -12,6 +12,7 @@ def missing_int(a):
     for i in range(1, len(array_num) + 1):
         if i not in array_num:
             return i
+    return i + 1
 
 
 """
