@@ -26,7 +26,7 @@ and returns the count of the numbers between a and b that are divisible by k.
 
 def find_divisible(a, b, k):
     count = 0
-    for i in range(a, b + 1):
+    for i in range(a, b):
         if i % k == 0:
             count += 1
     return count
@@ -39,7 +39,7 @@ jump out of the array.
 """
 
 
-def solution(A):
+def test2(A):
     N = [False] * len(A)
     pos = 0
     jumps = 0
@@ -52,15 +52,21 @@ def solution(A):
     return jumps
 
 
+def test():
+    needle = 1
+    haystack = [0, 2, 4, 1]
+    for i in range(len(haystack)):
+        print(haystack[i])
+
+
 def main():
     a = [1, 2, 3]
     # a = [1, 3, 6, 4, 1, 2]
     # a = [-1, -1, -1, -5]
-    # a = [1, 3, 6, 4, 1, 7, 8, 10]
-    print(missing_int(a))
-    # print(find_divisible(6, 11, 2))
+    # print(missing_int(a))
+    print(find_divisible(6, 11, 2))
     # a = [2, 3, -1, 1, 3]
-    # print(solution(a))  # the answer should be 4
+    # print(test2(a))  # the answer should be 4
 
 
 if __name__ == "__main__":
