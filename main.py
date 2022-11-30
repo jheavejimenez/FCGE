@@ -5,6 +5,7 @@ Given an array  A of N integers, write function missing_int(A) that
 returns the smallest positive integer (greater than 0) that does not occur in A.
 
 """
+import math
 
 
 def missing_int(a):
@@ -53,20 +54,31 @@ def test2(A):
 
 
 def test():
-    needle = 1
-    haystack = [0, 2, 4, 1]
-    for i in range(len(haystack)):
-        print(haystack[i])
+    target = 9
+    nums = [-1, 0, 3, 5, 9, 12]
 
+    lo = 0
+    hi = len(nums)
+    while True:
+        m = math.floor(lo + (hi - lo) / 2)
+        v = nums[m]
+
+        if v == target:
+            return m
+        elif v > target:
+            hi = m
+        else:
+            lo = m + 1
+    return -1
 
 def main():
     a = [1, 2, 3]
     # a = [1, 3, 6, 4, 1, 2]
     # a = [-1, -1, -1, -5]
     # print(missing_int(a))
-    print(find_divisible(6, 11, 2))
+    # print(find_divisible(6, 11, 2))
     # a = [2, 3, -1, 1, 3]
-    # print(test2(a))  # the answer should be 4
+    test()
 
 
 if __name__ == "__main__":
